@@ -26,7 +26,22 @@ jobs:
           java-version: '11'
           cache: maven
 
+      - name: store docker image cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+          # Ignore the failure of a step and avoid terminating the job.
+        continue-on-error: true
+
+      - name: Restore Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: restore
+
       - name: execute-web-tests
         run: |
           mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Dselenide.browser=chrome
+
+      - name: Save Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: save
 
