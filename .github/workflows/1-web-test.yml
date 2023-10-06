@@ -15,16 +15,19 @@ jobs:
           - 4444:4444
 
     steps:
-      - name: pull the project into runner
-        uses: actions/checkout@v4
+      - name: store docker image cache
+        uses: satackey/action-docker-layer-caching@v0.0.11
+        # Ignore the failure of a step and avoid terminating the job.
+        continue-on-error: true
 
-      - name: setup java jdk11
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up JDK 11
         timeout-minutes: 30
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
           java-version: '11'
-          cache: maven
 
       - name: store docker image cache
         uses: satackey/action-docker-layer-caching@v0.0.11
