@@ -1,4 +1,4 @@
-name: web-test
+name: mobile-test
 
 on:
   push:
@@ -28,8 +28,9 @@ jobs:
         with:
           step: restore
 
-      - name: Install and Run Appium Server
-        uses: moatazeldebsy/appium-server-gitHub-action@V1.0.4
+      - name: Appium Server Action
+        uses: moatazeldebsy/Appium-Server-GitHub-Action@V1.0.7
+
 
       - name: execute-mobile-tests
         run: |
