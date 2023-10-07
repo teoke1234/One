@@ -31,10 +31,6 @@ jobs:
         with:
           step: restore
 
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-
       - name: Set up Appium
         run: |
           npm install -g appium@2.0.1
