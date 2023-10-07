@@ -83,7 +83,9 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider -Dgroups=mobile
+          script: mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.ApiDemosDemoAndroidProvider
+#                  mvn clean test -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider -Dgroups=mobile
+#                  mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.ApiDemosDemoAndroidProvider
 #      - name: run ios tests
 #        if: ${{ inputs.mobile-os == 'ios' }}
 #        run: |

@@ -9,7 +9,7 @@ import static com.codeborne.selenide.appium.ScreenObject.screen;
 
 public class AddToCartTest extends MobileTestSetup {
 
-    @MobileTest
+//    @MobileTest
     void addToCartTest(){
         HomeScreen homeScreen = screen(HomeScreen.class);
 
