@@ -1,9 +1,9 @@
 name: mobile-test
 
 on:
-#  push:
-#    branches:
-##      - master
+  push:
+    branches:
+      - master
 
   workflow_dispatch:
 
@@ -65,7 +65,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider
+          script: mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.ApiDemosDemoAndroidProvider
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1
