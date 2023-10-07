@@ -17,7 +17,7 @@ public class ApiDemosDemoAndroidProvider implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("teoke1");
         options.setApp(System.getProperty("user.dir")+"/apps/ApiDemos-debug.apk");
-        options.setUdid("ce061716b8c2b0390d7e"); //ce061716b8c2b0390d7e // R5CT22QF5DD
+//        options.setUdid("ce061716b8c2b0390d7e"); //ce061716b8c2b0390d7e // R5CT22QF5DD
 //        options.doesNoReset(MyDemoApp);
 //        options.setFullReset(false);
         try {
