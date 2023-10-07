@@ -34,8 +34,6 @@ jobs:
       - name: Set up Appium
         run: |
           npm install -g appium@2.0.1
-          appium driver install uiautomator2
-          appium driver install xcuitest
           appium -v
           appium &>/dev/null &
           
