@@ -3,7 +3,7 @@ name: mobile-test
 on:
   push:
     branches:
-      - master
+#      - master
 
   workflow_dispatch:
 
