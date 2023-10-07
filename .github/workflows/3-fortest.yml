@@ -8,7 +8,7 @@ on:
     inputs:
       mobile-os:
         description: 'android or ios'
-        required: false
+        required: true
         default: 'android'
         type: choice
         options:
