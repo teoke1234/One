@@ -9,7 +9,7 @@ on:
 
 jobs:
   run-mobile-test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     timeout-minutes: 15
     strategy:
       matrix:
