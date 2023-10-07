@@ -8,18 +8,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-web-test:
+  run-mobile-test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
+    strategy:
+      matrix:
+        api-level: [ 29 ]
 
     steps:
-      - name: Set up Appium
-        run: |
-          npm install -g appium@2.0.1
-          appium -v
-          appium &>/dev/null &
-
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -35,12 +31,43 @@ jobs:
         with:
           step: restore
 
-      - name: execute-mobile-tests
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Set up Appium
+        run: |
+          npm install -g appium@2.0.1
+          appium -v
+          appium &>/dev/null &
+          
+      - name: AVD cache
+        uses: actions/cache@v2
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-${{ matrix.api-level }}
+
+      - name: create AVD and generate snapshot for caching
+        if: steps.avd-cache.outputs.cache-hit != 'true'
         uses: ReactiveCircus/android-emulator-runner@v2.28.0
         with:
-          api-level: 29
-          script: mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider
+          api-level: ${{ matrix.api-level }}
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: false
+          script: echo "Generated AVD snapshot for caching."
 
+      - name: run android tests
+        uses: ReactiveCircus/android-emulator-runner@v2.28.0
+        with:
+          api-level: ${{ matrix.api-level }}
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: mvn clean test -Dgroups=mobile -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1

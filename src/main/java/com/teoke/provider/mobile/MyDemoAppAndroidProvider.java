@@ -23,7 +23,7 @@ public class MyDemoAppAndroidProvider implements WebDriverProvider {
 //        options.doesNoReset(MyDemoApp);
 //        options.setFullReset(false);
         try {
-            return new AndroidDriver(new URL("http://127.0.0.1:4723"),options);
+            return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),options);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
