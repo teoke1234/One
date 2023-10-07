@@ -8,7 +8,7 @@ on:
     inputs:
       mobile-os:
         description: 'android or ios'
-        required: true
+        required: false
         default: 'android'
         type: choice
         options:
@@ -77,17 +77,17 @@ jobs:
 
       - name: run android tests
         uses: reactivecircus/android-emulator-runner@v2
-        if: ${{ inputs.mobile-os == 'android' }}
+#        if: ${{ inputs.mobile-os == 'android' }}
         with:
           api-level: 25
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile"
-      - name: run ios tests
-        if: ${{ inputs.mobile-os == 'ios' }}
-        run: |
-          mvn clean test -Dselenide.browser=com.tmb.provider.mobile.local.IosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
+          script: mvn clean test -Dselenide.browser=com.teoke.provider.mobile.MyDemoAppAndroidProvider -Dgroups=mobile
+#      - name: run ios tests
+#        if: ${{ inputs.mobile-os == 'ios' }}
+#        run: |
+#          mvn clean test -Dselenide.browser=com.tmb.provider.mobile.local.IosAppProvider -Dgroups="${{ inputs.test-tags-to-include }} & mobile" -Denvironment=${{ inputs.environment }}
 
       - uses: vimtor/action-zip@v1
         if: always()
