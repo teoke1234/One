@@ -1,9 +1,9 @@
 name: web-test
 
 on:
-  push:
-    branches:
-#      - master
+#  push:
+#    branches:
+##      - master
 
   workflow_dispatch:
 

@@ -1,10 +1,9 @@
 name: run mobile automated tests
 
 on:
-  on:
-    push:
-      branches:
-        - master
+  push:
+    branches:
+      - master
   workflow_dispatch:
     inputs:
       mobile-os:
