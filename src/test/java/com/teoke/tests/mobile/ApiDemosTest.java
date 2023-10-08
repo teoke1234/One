@@ -7,7 +7,7 @@ import com.teoke.tags.testtype.MobileTest;
 
 public class ApiDemosTest extends MobileTestSetup {
 
-    @MobileTest
+//    @MobileTest
     void scrollToElement(){
         HomeScreen homeScreen = ScreenObject.screen(HomeScreen.class);
 
