@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class WebTestSetup {
+public class WebTestSetup extends TestSetup{
 
     private final static FrameWorkConfig CONFIG = ConfigFactory.config();
     private final static String URL = CONFIG.webURL();

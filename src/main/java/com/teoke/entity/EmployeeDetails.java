@@ -1,8 +1,10 @@
 package com.teoke.entity;
 
+import com.teoke.entity.strategy.AddressStrategy;
 import com.teoke.entity.strategy.FirstNameStrategy;
 import com.teoke.entity.strategy.LastNameStrategy;
 import lombok.Data;
+import uk.co.jemos.podam.common.EmailStrategy;
 import uk.co.jemos.podam.common.PodamStrategyValue;
 import uk.co.jemos.podam.common.PodamStringValue;
 
@@ -17,5 +19,9 @@ public class EmployeeDetails {
     private String lastname;
     @PodamStringValue(strValue = "images/browserstack.jpeg")
     private String profilePicturePath;
+    @PodamStrategyValue(EmailStrategy.class)
+    private String email;
+    @PodamStrategyValue(AddressStrategy.class)
+    private String address;
 
 }
