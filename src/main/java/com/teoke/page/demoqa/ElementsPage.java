@@ -3,11 +3,12 @@ package com.teoke.page.demoqa;
 import com.teoke.page.demoqa.elementspage.CheckBoxPage;
 import com.teoke.page.demoqa.elementspage.RadioButtonPage;
 import com.teoke.page.demoqa.elementspage.TextBoxPage;
+import com.teoke.page.demoqa.elementspage.WebTablesPage;
 import com.teoke.page.demoqa.pagecomonent.Elements;
 
 import static com.teoke.page.demoqa.enums.ElementsType.*;
 
-public class ElementsPage {
+public final class ElementsPage {
 
     private final Elements elements;
 
@@ -29,6 +30,11 @@ public class ElementsPage {
     public RadioButtonPage navigateToRadioButtonPage(){
         this.elements.selectComponentOfElements(RADIO_BUTTON);
         return new RadioButtonPage();
+    }
+
+    public WebTablesPage navigateToWebTablesPage(){
+        this.elements.selectComponentOfElements(WEB_TABLES);
+        return new WebTablesPage();
     }
 
 }

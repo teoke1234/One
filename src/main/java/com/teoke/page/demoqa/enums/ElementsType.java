@@ -5,6 +5,7 @@ public enum ElementsType {
     CHECK_BOX("Check Box"),
     RADIO_BUTTON("Radio Button"),
     BUTTON("Button"),
+    WEB_TABLES("Web Tables"),
     LINK("Link"),
     BROKEN_LINKS("Broken Links - Images"),
     UPLOAD_AND_DOWNLOAD("Upload and Download"),

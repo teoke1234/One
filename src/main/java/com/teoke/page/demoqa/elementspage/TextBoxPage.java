@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.*;
 
-public class TextBoxPage {
+public final class TextBoxPage {
 
     private static final SelenideElement FULL_NAME = $(id("userName"));
     private static final SelenideElement EMAIL = $(id("userEmail"));

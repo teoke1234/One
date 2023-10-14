@@ -9,7 +9,7 @@ import com.teoke.page.demoqa.enums.ElementsType;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selectors.*;
 
-public class Elements {
+public final class Elements {
 
     public Elements selectComponentOfElements(ElementsType elementsType){
         Selenide.$(byText(elementsType.getelementsName())).shouldBe(Condition.enabled)

@@ -1,10 +1,8 @@
 package com.teoke.entity;
 
-import com.teoke.entity.strategy.AddressStrategy;
-import com.teoke.entity.strategy.FirstNameStrategy;
-import com.teoke.entity.strategy.LastNameStrategy;
+import com.teoke.entity.strategy.*;
 import lombok.Data;
-import uk.co.jemos.podam.common.EmailStrategy;
+import uk.co.jemos.podam.common.PodamIntValue;
 import uk.co.jemos.podam.common.PodamStrategyValue;
 import uk.co.jemos.podam.common.PodamStringValue;
 
@@ -23,5 +21,11 @@ public class EmployeeDetails {
     private String email;
     @PodamStrategyValue(AddressStrategy.class)
     private String address;
+    @PodamIntValue(minValue = 1,maxValue = 150)
+    private int age;
+    @PodamIntValue(minValue = 20,maxValue = 1000000)
+    private int salary;
+    @PodamStrategyValue(DepartmentStrategy.class)
+    private String department;
 
 }

@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.className;
 import static org.openqa.selenium.By.id;
 
-public class CheckBoxPage {
+public final class CheckBoxPage {
 
     private static final SelenideElement CHECK_BOX = $(className("rct-checkbox"));
     private static final SelenideElement RESULT = $(id("result"));

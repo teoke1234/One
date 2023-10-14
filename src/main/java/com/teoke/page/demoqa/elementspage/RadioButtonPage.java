@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static org.openqa.selenium.By.className;
 import static org.openqa.selenium.By.id;
 
-public class RadioButtonPage {
+public final class RadioButtonPage {
 
     private static final SelenideElement YES = $(byText("Yes"));
     private static final SelenideElement YES_BUTTON = $(id("yesRadio"));
