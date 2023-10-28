@@ -31,6 +31,20 @@ public class UserTest extends ApiTestSetUp {
     }
 
     @ApiTest
+    void createUser2() {
+        Response response = UserApi.createUser(userTestData);
+
+        response.prettyPrint();
+        System.out.println(response.jsonPath().getString("name"));
+        ResponseAssert.assertThat(response)
+                .statusCodeIs(201)
+                .canBeDeserializedTo(CreateUserResponse.class)
+                .matchingRule(response1 -> response1.jsonPath().getString("job").equalsIgnoreCase(userTestData.getJob()))
+                .matchWithSchema("create-user-response-schema.json")
+                .assertAll();
+    }
+
+    @ApiTest
     void getUser(){
         Response response = UserApi.getUser(2);
 

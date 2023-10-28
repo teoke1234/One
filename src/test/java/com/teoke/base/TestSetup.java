@@ -1,11 +1,15 @@
 package com.teoke.base;
 
+import com.codeborne.selenide.junit5.TextReportExtension;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+
+@ExtendWith(TextReportExtension.class)
 public class TestSetup {
 
   @BeforeAll

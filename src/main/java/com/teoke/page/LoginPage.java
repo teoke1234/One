@@ -36,4 +36,12 @@ public class LoginPage {
         FORGOT_YOUR_PASSWORD.shouldBe(interactable, Duration.ofSeconds(30)).click(usingJavaScript());
         return new ResetPasswordPage();
     }
+
+    public HomePage loginToApplication2(String username, String password) {
+        USERNAME.shouldBe(visible).setValue(username);
+        PASSWORD.shouldBe(visible).setValue(password);
+        LOGIN_BUTTON.shouldBe(visible).click();
+        return new HomePage();
+    }
+
 }
