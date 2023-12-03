@@ -5,9 +5,9 @@ import com.teoke.base.WebTestSetup;
 import com.teoke.entity.EmployeeDetails;
 import com.teoke.entity.LoginDetails;
 import com.teoke.page.LoginPage;
+import com.teoke.tags.testtype.WebTest;
 import com.teoke.testdata.EmployeeTestData;
 import com.teoke.testdata.LoginTestData;
-import com.teoke.tags.testtype.WebTest;
 
 public class AddEmployeeTest extends WebTestSetup {
 

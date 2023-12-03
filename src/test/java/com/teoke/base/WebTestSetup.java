@@ -14,6 +14,7 @@ public class WebTestSetup extends TestSetup{
 
     @BeforeEach
     void setUp() {
+
         open(URL);
     }
 

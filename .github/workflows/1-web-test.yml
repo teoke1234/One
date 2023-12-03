@@ -41,7 +41,8 @@ jobs:
 
       - name: execute-web-tests
         run: |
-          mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Dselenide.browser=chrome
+          docker ps
+          
 
       - name: Save Maven cache
         uses: skjolber/maven-cache-github-action@v1

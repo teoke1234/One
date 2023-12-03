@@ -1,0 +1,64 @@
+version: '3'
+services:
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  chrome_1:
+    image: selenium/node-chrome:latest
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "6900:5900"
+
+  chrome_2:
+    image: selenium/node-chrome:latest
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "6901:5900"
+
+
+  chrome_3:
+    image: selenium/node-chrome:latest
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    ports:
+      - "6902:5900"
+
+
+#  run_test:
+#    image: one
+#    build: .
+#    command: cmd /C "mvn clean test -Dgroups=web -Dselenide.remote=http://localhost:4444/wd/hub -Dselenide.browser=chrome"
+#    volumes:
+#      - "./allure-reports:/target/surefire-reports"
+#    depends_on:
+#      - chrome_1
+#      - chrome_2
+
+#  stop-container:
+#    image: stop_container
+#    command: ["sh", "-c", "for /f %i in ('docker ps -q') do docker stop %i & docker rm %i"]
+#    depends_on:
+#      - run_test
+
+
+

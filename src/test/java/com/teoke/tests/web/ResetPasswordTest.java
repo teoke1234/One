@@ -13,4 +13,28 @@ public class ResetPasswordTest extends WebTestSetup {
                 .resetPassword()
                 .checkWhetherPasswordResetMessageIsDisplayed();
     }
+
+    @WebTest
+    void testResetPassWord1() {
+        LoginPage.getInstance()
+                .navigateToResetPasswordPage()
+                .resetPassword()
+                .checkWhetherPasswordResetMessageIsDisplayed();
+    }
+
+    @WebTest
+    void testResetPassWord2() {
+        LoginPage.getInstance()
+                .navigateToResetPasswordPage()
+                .resetPassword()
+                .checkWhetherPasswordResetMessageIsDisplayed();
+    }
+
+    @WebTest
+    void testResetPassWord3() {
+        LoginPage.getInstance()
+                .navigateToResetPasswordPage()
+                .resetPassword()
+                .checkWhetherPasswordResetMessageIsDisplayed();
+    }
 }
