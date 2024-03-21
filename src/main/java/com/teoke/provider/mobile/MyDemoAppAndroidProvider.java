@@ -19,11 +19,11 @@ public class MyDemoAppAndroidProvider implements WebDriverProvider {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("teoke2");
         options.setApp(System.getProperty("user.dir")+"/apps/Android-MyDemoAppRN.1.3.0.build-244.apk");
-//        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
+        options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
 //        options.setPlatformName("android");
 //        options.setPlatformName("Android");
 //        options.setPlatformVersion("7.1.1");
-        options.setUdid("R5CT22QF5DD"); //ce061716b8c2b0390d7e // R5CT22QF5DD
+        options.setUdid("ce061716b8c2b0390d7e"); //ce061716b8c2b0390d7e // R5CT22QF5DD
 //        options.doesNoReset(MyDemoApp);
 //        options.setFullReset(false);
         try {

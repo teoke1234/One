@@ -10,14 +10,14 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ApiDemosDemoAndroidProvider implements WebDriverProvider {
+public class ApiDemoAndroidProvider implements WebDriverProvider {
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         UiAutomator2Options options = new UiAutomator2Options();
         options.setDeviceName("teoke1");
         options.setApp(System.getProperty("user.dir")+"/apps/ApiDemos-debug.apk");
-//        options.setUdid("ce061716b8c2b0390d7e"); //ce061716b8c2b0390d7e // R5CT22QF5DD
+        options.setUdid("ce061716b8c2b0390d7e"); //ce061716b8c2b0390d7e // R5CT22QF5DD
 //        options.doesNoReset(MyDemoApp);
 //        options.setFullReset(false);
         try {

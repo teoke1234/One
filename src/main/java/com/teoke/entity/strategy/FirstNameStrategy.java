@@ -7,7 +7,7 @@ import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class FirstNameStrategy implements AttributeStrategy<String> {
+public class    FirstNameStrategy implements AttributeStrategy<String> {
     @Override
     public String getValue(Class<?> aClass, List<Annotation> list) {
         Faker faker = new Faker();

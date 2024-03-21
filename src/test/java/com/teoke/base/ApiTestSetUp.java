@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class ApiTestSetUp extends TestSetup {
 
-    private static final FrameWorkConfig CONFIG = ConfigFactory.config();
+    private static final FrameWorkConfig CONFIG =   ConfigFactory.config();
 
     @BeforeEach
     void apiSetup(){

@@ -88,7 +88,6 @@ public class ResponseAssert extends AbstractAssert<ResponseAssert, Response> {
                 .assertThat(JsonSchemaValidator.matchesJsonSchema(file).matches(actual.getBody().asString()))
                 .as("Response schema validation: ")
                 .isTrue();
-
         return this;
     }
 

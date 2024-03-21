@@ -11,6 +11,7 @@ import java.lang.annotation.*;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-@MethodSource("com.teoke.ulties.DataProviderUtils#getData")
+//@MethodSource("com.teoke.ulties.DataProviderUtils#getData")
+@Test
 public @interface MobileTest {
 }

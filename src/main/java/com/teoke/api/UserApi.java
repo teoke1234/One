@@ -1,5 +1,6 @@
 package com.teoke.api;
 
+
 import com.teoke.entity.request.UserDetails;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -22,5 +23,7 @@ public class UserApi {
                 .pathParam("userId", userId)
                 .get("api/users/{userId}");
     }
+
+
 
 }
